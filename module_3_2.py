@@ -1,4 +1,4 @@
-def send_email(message, recipient, sender="university.help@gmail.com"):
+def send_email(message, recipient, *, sender="university.help@gmail.com"):
     if ("@" not in sender or "@" not in recipient
             or not (sender.endswith((".com", ".ru", ".net")))
             or not (recipient.endswith((".com", ".ru", ".net")))):
@@ -13,7 +13,7 @@ def send_email(message, recipient, sender="university.help@gmail.com"):
         print(f"НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.")
 
 
-send_email("Привет!", "recipient@example.com")
-send_email("Привет!", "recipient@example.com", "custom.sender@mail.com")
-send_email("Привет!", "university.help@gmail.com")
-send_email("Привет!", "invalid_email")
+send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
+send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
+send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru', sender='urban.teacher@mail.uk')
+send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
